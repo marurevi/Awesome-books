@@ -7,6 +7,7 @@ const book2 = { name: 'Name2', author: 'Author2' };
 let books = [];
 
 const addBtn = document.getElementById('add');
+const removeBtn = document.querySelectorAll('.remove');
 const title = document.getElementById('newName');
 const author = document.getElementById('newAuthor');
 
@@ -30,13 +31,13 @@ function retrievedata() {
     bookShelf.appendChild(removeButton);
     removeButton.innerHTML = 'Remove';
     removeButton.className = 'remove';
-    removeButton.id = `remove${i}`;
+    removeButton.id = `${i}`;
+    removeButton.addEventListener ('click', addEventListener('click', removeBook(removeButton.id)));
     const separator = document.createElement('hr');
     bookShelf.appendChild(separator);
   }
 }
 
-console.log(books);
 class Book {
   constructor(name, author) {
     this.name = name;
@@ -51,6 +52,12 @@ function addNewBook() {
   savedata();
 }
 
+function removeBook (idBtn) {
+    books.splice(idBtn, 1);
+    
+}
+
 addBtn.addEventListener('click', addNewBook);
+
 
 window.addEventListener('load', retrievedata());
