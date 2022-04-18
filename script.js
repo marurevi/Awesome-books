@@ -1,26 +1,26 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-plusplus */
 const bookShelf = document.getElementById('bookshelf');
 
-const book1 = { name: 'Name1', author: 'Author1' };
-const book2 = { name: 'Name2', author: 'Author2' };
 let books = [];
 
 const addBtn = document.getElementById('add');
-const removeBtn = document.querySelectorAll('.remove');
 const title = document.getElementById('newName');
 const author = document.getElementById('newAuthor');
 
 function savedata() {
-  console.log('savedata');
   localStorage.setItem('booksdata', JSON.stringify(books));
+}
+
+function removeBook(event) {
+  books.splice(event.target.id, 1);
+  savedata();
+  document.location.reload();
 }
 
 function retrievedata() {
   if (localStorage.getItem('booksdata') != null) {
     books = JSON.parse(localStorage.getItem('booksdata'));
   }
-  for (let i = 0; i < books.length; i++) {
+  for (let i = 0; i < books.length; i += 1) {
     const bookname = document.createElement('div');
     bookname.innerHTML = books[i].name;
     bookShelf.appendChild(bookname);
@@ -32,16 +32,9 @@ function retrievedata() {
     removeButton.innerHTML = 'Remove';
     removeButton.className = 'remove';
     removeButton.id = `${i}`;
-    removeButton.addEventListener ('click', addEventListener('click', removeBook(removeButton.id)));
+    removeButton.addEventListener('click', removeBook);
     const separator = document.createElement('hr');
     bookShelf.appendChild(separator);
-  }
-}
-
-class Book {
-  constructor(name, author) {
-    this.name = name;
-    this.author = author;
   }
 }
 
@@ -52,12 +45,6 @@ function addNewBook() {
   savedata();
 }
 
-function removeBook (idBtn) {
-    books.splice(idBtn, 1);
-    
-}
-
 addBtn.addEventListener('click', addNewBook);
-
 
 window.addEventListener('load', retrievedata());
