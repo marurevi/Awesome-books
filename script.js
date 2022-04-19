@@ -1,64 +1,67 @@
+/* eslint-disable max-classes-per-file */
 const bookShelf = document.getElementById('bookshelf');
-
-let books = [];
-
+const addBtn = document.getElementById('add');
+const title = document.getElementById('newName');
+const author = document.getElementById('newAuthor');
 class Book {
-  constructor (name, author) {
+  constructor(name, author) {
     this.name = name;
     this.author = author;
   }
 }
-
-
-
-const addBtn = document.getElementById('add');
-const title = document.getElementById('newName');
-const author = document.getElementById('newAuthor');
-
-function savedata() {
-  localStorage.setItem('booksdata', JSON.stringify(books));
-}
-
-function retrievedata() {
-  if (localStorage.getItem('booksdata') != null) {
-    books = JSON.parse(localStorage.getItem('booksdata'));
+class Bookshelf {
+  constructor() {
+    this.books = [];
+  //  this.books = this.books.bind(this);
   }
-  for (let i = 0; i < books.length; i += 1) {
-    const bookname = document.createElement('h4');
-    bookname.innerHTML = books[i].name;
-    bookShelf.appendChild(bookname);
-    const bookauthor = document.createElement('h4');
-    bookauthor.innerHTML = books[i].author;
-    bookShelf.appendChild(bookauthor);
-    const removeButton = document.createElement('button');
-    bookShelf.appendChild(removeButton);
-    removeButton.innerHTML = 'Remove';
-    removeButton.className = 'remove';
-    removeButton.id = `${i}`;
-    // eslint-disable-next-line no-use-before-define
-    removeButton.addEventListener('click', removeBook);
-    const separator = document.createElement('hr');
-    bookShelf.appendChild(separator);
+
+  savedata() {
+    localStorage.setItem('booksdata', JSON.stringify(this.books));
   }
-}
 
-function removeBook(event) {
-  books.splice(event.target.id, 1);
-  savedata();
-  bookShelf.innerHTML = '';
-  retrievedata();
-}
+  retrievedata() {
+    if (localStorage.getItem('booksdata') != null) {
+      this.books = JSON.parse(localStorage.getItem('booksdata'));
+    }
+    for (let i = 0; i < this.books.length; i += 1) {
+      const bookname = document.createElement('h4');
+      bookname.innerHTML = this.books[i].name;
+      bookShelf.appendChild(bookname);
+      const bookauthor = document.createElement('h4');
+      bookauthor.innerHTML = this.books[i].author;
+      bookShelf.appendChild(bookauthor);
+      const removeButton = document.createElement('button');
+      bookShelf.appendChild(removeButton);
+      removeButton.innerHTML = 'Remove';
+      removeButton.className = 'remove';
+      removeButton.id = `${i}`;
+      // eslint-disable-next-line no-use-before-define
+      removeButton.addEventListener('click', this.removeBook.bind(this));
+      const separator = document.createElement('hr');
+      bookShelf.appendChild(separator);
+    }
+  }
 
-function addNewBook() {
-  if (title.value !== '' && author.value !== '') {
-    const book = new Book (title.value, author.value );
-    books.push(book);
-    savedata();
+  removeBook(event) {
+    this.books.splice(event.target.id, 1);
+    this.savedata();
     bookShelf.innerHTML = '';
-    retrievedata();
+    this.retrievedata();
+  }
+
+  addNewBook() {
+    if (title.value !== '' && author.value !== '') {
+      const book = new Book(title.value, author.value);
+      this.books.push(book);
+      this.savedata();
+      bookShelf.innerHTML = '';
+      this.retrievedata();
+    }
   }
 }
 
-addBtn.addEventListener('click', addNewBook);
+const mybookshelf = new Bookshelf();
 
-window.addEventListener('load', retrievedata());
+addBtn.addEventListener('click', mybookshelf.addNewBook.bind(mybookshelf));
+
+window.addEventListener('load', mybookshelf.retrievedata.bind(mybookshelf));
