@@ -2,6 +2,15 @@ const bookShelf = document.getElementById('bookshelf');
 
 let books = [];
 
+class Book {
+  constructor (name, author) {
+    this.name = name;
+    this.author = author;
+  }
+}
+
+
+
 const addBtn = document.getElementById('add');
 const title = document.getElementById('newName');
 const author = document.getElementById('newAuthor');
@@ -42,7 +51,7 @@ function removeBook(event) {
 
 function addNewBook() {
   if (title.value !== '' && author.value !== '') {
-    const book = { name: title.value, author: author.value };
+    const book = new Book (title.value, author.value );
     books.push(book);
     savedata();
     bookShelf.innerHTML = '';
