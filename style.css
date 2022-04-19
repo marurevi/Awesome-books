@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 20px 10px;
+}
+
+h4,
+input {
+  margin: 5px 10px;
+}
+
+button {
+  padding: 5px;
+  margin: 8px 10px;
+}
