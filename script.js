@@ -10,12 +10,6 @@ function savedata() {
   localStorage.setItem('booksdata', JSON.stringify(books));
 }
 
-function removeBook(event) {
-  books.splice(event.target.id, 1);
-  savedata();
-  document.location.reload();
-}
-
 function retrievedata() {
   if (localStorage.getItem('booksdata') != null) {
     books = JSON.parse(localStorage.getItem('booksdata'));
@@ -32,10 +26,18 @@ function retrievedata() {
     removeButton.innerHTML = 'Remove';
     removeButton.className = 'remove';
     removeButton.id = `${i}`;
+    // eslint-disable-next-line no-use-before-define
     removeButton.addEventListener('click', removeBook);
     const separator = document.createElement('hr');
     bookShelf.appendChild(separator);
   }
+}
+
+function removeBook(event) {
+  books.splice(event.target.id, 1);
+  savedata();
+  bookShelf.innerHTML = '';
+  retrievedata();
 }
 
 function addNewBook() {
@@ -43,6 +45,8 @@ function addNewBook() {
     const book = { name: title.value, author: author.value };
     books.push(book);
     savedata();
+    bookShelf.innerHTML = '';
+    retrievedata();
   }
 }
 
