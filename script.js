@@ -24,14 +24,19 @@ class Bookshelf {
       this.books = JSON.parse(localStorage.getItem('booksdata'));
     }
     for (let i = 0; i < this.books.length; i += 1) {
-      const bookname = document.createElement('h4');
-      bookname.innerHTML = this.books[i].name;
-      bookShelf.appendChild(bookname);
-      const bookauthor = document.createElement('h4');
-      bookauthor.innerHTML = this.books[i].author;
-      bookShelf.appendChild(bookauthor);
+      const container = document.createElement('div');
+      bookShelf.appendChild(container);
+      if (i%2=== 0) {
+        container.className = 'class0';
+      } else {
+        container.className = 'class1';
+      }
+      const bookNameByAuthor = document.createElement('h4');
+      bookNameByAuthor.innerHTML = this.books[i].name + ' by '+ this.books[i].author;
+      container.appendChild(bookNameByAuthor);
+      
       const removeButton = document.createElement('button');
-      bookShelf.appendChild(removeButton);
+      container.appendChild(removeButton);
       removeButton.innerHTML = 'Remove';
       removeButton.className = 'remove';
       removeButton.id = `${i}`;

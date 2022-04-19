@@ -1,18 +1,60 @@
 * {
   margin: 0;
   padding: 0;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', sans-serif;
 }
 
-h1 {
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+h1,
+h2 {
   margin: 20px 10px;
 }
 
-h4,
-input {
-  margin: 5px 10px;
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 button {
   padding: 5px;
   margin: 8px 10px;
+}
+
+form button {
+  margin: 0
+}
+
+input {
+  margin: 5px 0;
+}
+
+.bookshelf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.class0,
+.class1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 5px;
+}
+
+.class0 {
+  background-color: rgb(88, 96, 112);
+  color: white;
 }
