@@ -21,10 +21,10 @@ function retrievedata() {
     books = JSON.parse(localStorage.getItem('booksdata'));
   }
   for (let i = 0; i < books.length; i += 1) {
-    const bookname = document.createElement('div');
+    const bookname = document.createElement('h4');
     bookname.innerHTML = books[i].name;
     bookShelf.appendChild(bookname);
-    const bookauthor = document.createElement('div');
+    const bookauthor = document.createElement('h4');
     bookauthor.innerHTML = books[i].author;
     bookShelf.appendChild(bookauthor);
     const removeButton = document.createElement('button');
@@ -39,7 +39,6 @@ function retrievedata() {
 }
 
 function addNewBook() {
-  // const book = new Book(title.value, author.value);
   const book = { name: title.value, author: author.value };
   books.push(book);
   savedata();
