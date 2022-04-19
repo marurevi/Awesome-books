@@ -26,15 +26,15 @@ class Bookshelf {
     for (let i = 0; i < this.books.length; i += 1) {
       const container = document.createElement('div');
       bookShelf.appendChild(container);
-      if (i%2=== 0) {
+      if (i % 2 === 0) {
         container.className = 'class0';
       } else {
         container.className = 'class1';
       }
       const bookNameByAuthor = document.createElement('h4');
-      bookNameByAuthor.innerHTML = this.books[i].name + ' by '+ this.books[i].author;
+      bookNameByAuthor.innerHTML = `${this.books[i].name} by ${this.books[i].author}`;
       container.appendChild(bookNameByAuthor);
-      
+
       const removeButton = document.createElement('button');
       container.appendChild(removeButton);
       removeButton.innerHTML = 'Remove';
