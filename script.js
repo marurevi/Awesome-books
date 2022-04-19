@@ -39,9 +39,11 @@ function retrievedata() {
 }
 
 function addNewBook() {
-  const book = { name: title.value, author: author.value };
-  books.push(book);
-  savedata();
+  if (title.value !== '' && author.value !== '') {
+    const book = { name: title.value, author: author.value };
+    books.push(book);
+    savedata();
+  }
 }
 
 addBtn.addEventListener('click', addNewBook);
