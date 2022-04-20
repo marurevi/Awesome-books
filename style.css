@@ -1,6 +1,5 @@
 * {
   margin: 0;
-  padding: 0;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
 }
 
@@ -14,6 +13,17 @@ body {
 
 header {
   width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: white;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
+  background-color: white;
 }
 
 .nav {
@@ -23,6 +33,19 @@ header {
   border: 1px solid black;
   padding: 10px;
   margin: 10px;
+  box-shadow: black 2px 2px 5px;
+}
+
+.footersquare {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: black 2px 2px 5px;
+}
+
+#listsection {
+  margin-bottom: 70px;
 }
 
 .rightmenu {
@@ -63,9 +86,13 @@ section {
   width: 100%;
 }
 
+.contacttext ul {
+  margin-left: 10px;
+}
+
 h1,
 h2 {
-  margin: 20px 10px;
+  margin: 150px 10px 50px 10px;
 }
 
 form {
