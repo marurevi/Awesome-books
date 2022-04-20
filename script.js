@@ -10,8 +10,12 @@ const addNewDisplay = document.getElementById('addnewsection');
 const contactBtn = document.getElementById('contact');
 const contactDisplay = document.getElementById('contactsection');
 
-document.getElementById('dateandtime').innerHTML = Date();
+function displayClock() {
+  document.getElementById('dateandtime').innerHTML = Date();
+  setTimeout(displayClock, 1000);
+}
 
+setTimeout(displayClock, 1000);
 class Book {
   constructor(name, author) {
     this.name = name;
