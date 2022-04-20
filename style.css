@@ -31,10 +31,6 @@ header {
   list-style: none;
 }
 
-.rightmenu li:not(:nth-child(1)) {
-  border-left: 1px solid black;
-}
-
 .rightmenu li {
   margin: 5px 0;
   padding: 10px;
@@ -44,6 +40,10 @@ header {
   cursor: pointer;
   color: rgb(26, 46, 85);
   font-weight: bold;
+}
+
+.rightmenu li:not(:nth-child(1)) {
+  border-left: 1px solid black;
 }
 
 #dateandtime {

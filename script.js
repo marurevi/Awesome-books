@@ -73,7 +73,7 @@ class Bookshelf {
 }
 
 function hidepages(event) {
-  switch (event.target.id){
+  switch (event.target.id) {
     case 'list':
       if (!addNewDisplay.classList.contains('hidden')) addNewDisplay.classList.add('hidden');
       if (!contactDisplay.classList.contains('hidden')) contactDisplay.classList.add('hidden');
@@ -83,13 +83,15 @@ function hidepages(event) {
     case 'addNew':
       if (!listDisplay.classList.contains('hidden')) listDisplay.classList.add('hidden');
       if (!contactDisplay.classList.contains('hidden')) contactDisplay.classList.add('hidden');
-      if (addNewDisplay.classList.contains('hidden')) addNewDisplay.classList.remove('hidden');      
+      if (addNewDisplay.classList.contains('hidden')) addNewDisplay.classList.remove('hidden');
       break;
 
     case 'contact':
       if (!listDisplay.classList.contains('hidden')) listDisplay.classList.add('hidden');
       if (!addNewDisplay.classList.contains('hidden')) addNewDisplay.classList.add('hidden');
       if (contactDisplay.classList.contains('hidden')) contactDisplay.classList.remove('hidden');
+      break;
+    default:
       break;
   }
 }
@@ -98,7 +100,7 @@ const mybookshelf = new Bookshelf();
 
 addBtn.addEventListener('click', mybookshelf.addNewBook.bind(mybookshelf));
 listBtn.addEventListener('click', hidepages);
-addNewBtn.addEventListener('click', hidepages); 
+addNewBtn.addEventListener('click', hidepages);
 contactBtn.addEventListener('click', hidepages);
 
 window.addEventListener('load', mybookshelf.retrievedata.bind(mybookshelf));
