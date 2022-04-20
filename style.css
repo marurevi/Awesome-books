@@ -51,6 +51,10 @@ header {
   margin-right: 10px;
 }
 
+.hidden {
+  display: none;
+}
+
 section {
   display: flex;
   flex-direction: column;

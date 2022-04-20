@@ -3,8 +3,15 @@ const bookShelf = document.getElementById('bookshelf');
 const addBtn = document.getElementById('add');
 const title = document.getElementById('newName');
 const author = document.getElementById('newAuthor');
+const listBtn = document.getElementById('list');
+const listDisplay = document.getElementById('listsection');
+const addNewBtn = document.getElementById('addNew');
+const addNewDisplay = document.getElementById('addnewsection');
+const contactBtn = document.getElementById('contact');
+const contactDisplay = document.getElementById('contactsection');
 
 document.getElementById('dateandtime').innerHTML = Date();
+
 class Book {
   constructor(name, author) {
     this.name = name;
@@ -65,8 +72,33 @@ class Bookshelf {
   }
 }
 
+function hidepages(event) {
+  switch (event.target.id){
+    case 'list':
+      if (!addNewDisplay.classList.contains('hidden')) addNewDisplay.classList.add('hidden');
+      if (!contactDisplay.classList.contains('hidden')) contactDisplay.classList.add('hidden');
+      if (listDisplay.classList.contains('hidden')) listDisplay.classList.remove('hidden');
+      break;
+
+    case 'addNew':
+      if (!listDisplay.classList.contains('hidden')) listDisplay.classList.add('hidden');
+      if (!contactDisplay.classList.contains('hidden')) contactDisplay.classList.add('hidden');
+      if (addNewDisplay.classList.contains('hidden')) addNewDisplay.classList.remove('hidden');      
+      break;
+
+    case 'contact':
+      if (!listDisplay.classList.contains('hidden')) listDisplay.classList.add('hidden');
+      if (!addNewDisplay.classList.contains('hidden')) addNewDisplay.classList.add('hidden');
+      if (contactDisplay.classList.contains('hidden')) contactDisplay.classList.remove('hidden');
+      break;
+  }
+}
+
 const mybookshelf = new Bookshelf();
 
 addBtn.addEventListener('click', mybookshelf.addNewBook.bind(mybookshelf));
+listBtn.addEventListener('click', hidepages);
+addNewBtn.addEventListener('click', hidepages); 
+contactBtn.addEventListener('click', hidepages);
 
 window.addEventListener('load', mybookshelf.retrievedata.bind(mybookshelf));
