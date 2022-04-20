@@ -9,6 +9,7 @@ const addNewBtn = document.getElementById('addNew');
 const addNewDisplay = document.getElementById('addnewsection');
 const contactBtn = document.getElementById('contact');
 const contactDisplay = document.getElementById('contactsection');
+const smallmsg = document.querySelector('small');
 
 function displayClock() {
   document.getElementById('dateandtime').innerHTML = Date();
@@ -16,6 +17,10 @@ function displayClock() {
 }
 
 setTimeout(displayClock, 1000);
+
+function hidemessage() {
+  if (!smallmsg.classList.contains('hideslowly')) smallmsg.classList.add('hideslowly');
+}
 class Book {
   constructor(name, author) {
     this.name = name;
@@ -68,6 +73,10 @@ class Bookshelf {
   addNewBook() {
     if (title.value !== '' && author.value !== '') {
       const book = new Book(title.value, author.value);
+      title.value = '';
+      author.value = '';
+      if (smallmsg.classList.contains('hideslowly')) smallmsg.classList.remove('hideslowly');
+      setTimeout(hidemessage, 3000);
       this.books.push(book);
       this.#savedata();
       bookShelf.innerHTML = '';

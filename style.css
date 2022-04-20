@@ -61,12 +61,12 @@ footer {
 
 .rightmenu li:hover {
   cursor: pointer;
-  color: rgb(26, 46, 85);
+  color: rgb(47, 78, 141);
   font-weight: bold;
 }
 
 .rightmenuSelected {
-  color: rgb(26, 46, 85);
+  color: rgb(47, 78, 141);
   font-weight: bold;
 }
 
@@ -140,4 +140,14 @@ input {
 .class0 {
   background-color: rgb(88, 96, 112);
   color: white;
+}
+
+small {
+  color: rgb(47, 78, 141);
+  margin-top: 20px;
+}
+
+.hideslowly {
+  color: white;
+  transition: all 3s ease-out;
 }
