@@ -8,14 +8,53 @@
     <title>Awesome books</title>
 </head>
 <body>
-  <h1>Awesome books</h1>
-  <div id="bookshelf" class="bookshelf"></div>
+  <header>
+    <nav class="nav">
+      <div>Awesome Books</div>
+      <ul class="rightmenu">
+        <li id="list" class="rightmenuSelected">List</li>
+        <li id="addNew">Add New</li>
+        <li id="contact">Contact</li>
+      </ul>
+    </nav>
+    <h5 id="dateandtime">
+    </h5>
+  </header>
+
+  <section id="listsection">
+    <h1>All awesome books</h1>
+    <div id="bookshelf" class="bookshelf"></div>
+  </section>
+
+  <section class="hidden" id="addnewsection">
     <h2>Add a new book</h2>
     <form id="mybookshelf">
       <input type="text" placeholder="Title" id="newName">
       <input type="text" placeholder="Author" id="newAuthor">
       <button type="button" id="add">Add</button>
     </form>
+    <small class="hideslowly">The book has been correctly added. Press 'List' to view.</small>
+  </section>
+
+  <section class="hidden" id="contactsection">
+    <h2>Contact information</h2>
+    <div class="contacttext">
+      <p>Do have any questions or you just want to say 'Hello'?</p>
+      <p>You can reach out to us!</p>
+      <br>
+      <ul>
+        <li>Our e-mail: mail@mail.com</li>
+        <li>Our phone number: +54 (011) 4320320</li>
+        <li>Our adress: Streetname 22, 84503 City, Country</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footersquare">
+      Copyright &copy; 2022 | "BookShelf app"- Version 1.0
+    </div>
+  </footer>
 
 
   <script src="./script.js"></script>

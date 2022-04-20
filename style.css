@@ -1,6 +1,5 @@
 * {
   margin: 0;
-  padding: 0;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
 }
 
@@ -12,9 +11,93 @@ body {
   width: 100%;
 }
 
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: white;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: black 2px 2px 5px;
+}
+
+.footersquare {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: black 2px 2px 5px;
+}
+
+#listsection {
+  margin-bottom: 70px;
+}
+
+.rightmenu {
+  display: flex;
+  padding: 0;
+  list-style: none;
+}
+
+.rightmenu li {
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.rightmenu li:hover {
+  cursor: pointer;
+  color: rgb(47, 78, 141);
+  font-weight: bold;
+}
+
+.rightmenuSelected {
+  color: rgb(47, 78, 141);
+  font-weight: bold;
+}
+
+.rightmenu li:not(:nth-child(1)) {
+  border-left: 1px solid black;
+}
+
+#dateandtime {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.contacttext ul {
+  margin-left: 10px;
+}
+
 h1,
 h2 {
-  margin: 20px 10px;
+  margin: 150px 10px 50px 10px;
 }
 
 form {
@@ -57,4 +140,14 @@ input {
 .class0 {
   background-color: rgb(88, 96, 112);
   color: white;
+}
+
+small {
+  color: rgb(47, 78, 141);
+  margin-top: 20px;
+}
+
+.hideslowly {
+  color: white;
+  transition: all 3s ease-out;
 }
