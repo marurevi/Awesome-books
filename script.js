@@ -12,10 +12,9 @@ class Book {
 class Bookshelf {
   constructor() {
     this.books = [];
-  //  this.books = this.books.bind(this);
   }
 
-  savedata() {
+  #savedata() {
     localStorage.setItem('booksdata', JSON.stringify(this.books));
   }
 
@@ -40,7 +39,6 @@ class Bookshelf {
       removeButton.innerHTML = 'Remove';
       removeButton.className = 'remove';
       removeButton.id = `${i}`;
-      // eslint-disable-next-line no-use-before-define
       removeButton.addEventListener('click', this.removeBook.bind(this));
       const separator = document.createElement('hr');
       bookShelf.appendChild(separator);
@@ -49,7 +47,7 @@ class Bookshelf {
 
   removeBook(event) {
     this.books.splice(event.target.id, 1);
-    this.savedata();
+    this.#savedata();
     bookShelf.innerHTML = '';
     this.retrievedata();
   }
@@ -58,7 +56,7 @@ class Bookshelf {
     if (title.value !== '' && author.value !== '') {
       const book = new Book(title.value, author.value);
       this.books.push(book);
-      this.savedata();
+      this.#savedata();
       bookShelf.innerHTML = '';
       this.retrievedata();
     }
