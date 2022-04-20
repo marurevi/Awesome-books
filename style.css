@@ -65,6 +65,11 @@ footer {
   font-weight: bold;
 }
 
+.rightmenuSelected {
+  color: rgb(26, 46, 85);
+  font-weight: bold;
+}
+
 .rightmenu li:not(:nth-child(1)) {
   border-left: 1px solid black;
 }

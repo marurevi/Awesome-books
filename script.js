@@ -40,7 +40,7 @@ class Bookshelf {
         container.className = 'class1';
       }
       const bookNameByAuthor = document.createElement('h4');
-      bookNameByAuthor.innerHTML = `${this.books[i].name} by ${this.books[i].author}`;
+      bookNameByAuthor.innerHTML = `"${this.books[i].name}" by ${this.books[i].author}`;
       container.appendChild(bookNameByAuthor);
 
       const removeButton = document.createElement('button');
@@ -78,18 +78,27 @@ function hidepages(event) {
       if (!addNewDisplay.classList.contains('hidden')) addNewDisplay.classList.add('hidden');
       if (!contactDisplay.classList.contains('hidden')) contactDisplay.classList.add('hidden');
       if (listDisplay.classList.contains('hidden')) listDisplay.classList.remove('hidden');
+      if (!listBtn.classList.contains('rightmenuSelected')) listBtn.classList.add('rightmenuSelected');
+      if (addNewBtn.classList.contains('rightmenuSelected')) addNewBtn.classList.remove('rightmenuSelected');
+      if (contactBtn.classList.contains('rightmenuSelected')) contactBtn.classList.remove('rightmenuSelected');
       break;
 
     case 'addNew':
       if (!listDisplay.classList.contains('hidden')) listDisplay.classList.add('hidden');
       if (!contactDisplay.classList.contains('hidden')) contactDisplay.classList.add('hidden');
       if (addNewDisplay.classList.contains('hidden')) addNewDisplay.classList.remove('hidden');
+      if (!addNewBtn.classList.contains('rightmenuSelected')) addNewBtn.classList.add('rightmenuSelected');
+      if (listBtn.classList.contains('rightmenuSelected')) listBtn.classList.remove('rightmenuSelected');
+      if (contactBtn.classList.contains('rightmenuSelected')) contactBtn.classList.remove('rightmenuSelected');
       break;
 
     case 'contact':
       if (!listDisplay.classList.contains('hidden')) listDisplay.classList.add('hidden');
       if (!addNewDisplay.classList.contains('hidden')) addNewDisplay.classList.add('hidden');
       if (contactDisplay.classList.contains('hidden')) contactDisplay.classList.remove('hidden');
+      if (!contactBtn.classList.contains('rightmenuSelected')) contactBtn.classList.add('rightmenuSelected');
+      if (listBtn.classList.contains('rightmenuSelected')) listBtn.classList.remove('rightmenuSelected');
+      if (addNewBtn.classList.contains('rightmenuSelected')) addNewBtn.classList.remove('rightmenuSelected');
       break;
     default:
       break;
