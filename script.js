@@ -3,6 +3,8 @@ const bookShelf = document.getElementById('bookshelf');
 const addBtn = document.getElementById('add');
 const title = document.getElementById('newName');
 const author = document.getElementById('newAuthor');
+
+document.getElementById('dateandtime').innerHTML = Date();
 class Book {
   constructor(name, author) {
     this.name = name;

@@ -12,6 +12,53 @@ body {
   width: 100%;
 }
 
+header {
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
+.rightmenu {
+  display: flex;
+  padding: 0;
+  list-style: none;
+}
+
+.rightmenu li:not(:nth-child(1)) {
+  border-left: 1px solid black;
+}
+
+.rightmenu li {
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.rightmenu li:hover {
+  cursor: pointer;
+  color: rgb(26, 46, 85);
+  font-weight: bold;
+}
+
+#dateandtime {
+  text-align: right;
+  margin-right: 10px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 h1,
 h2 {
   margin: 20px 10px;
