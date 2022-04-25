@@ -32,7 +32,7 @@ Open index.html file with your browser of choice.
 
 ### Deployment
 
-Not needed.
+[Live view](https://marurevi.github.io/Awesome-books/)
 
 ## Authors
 
