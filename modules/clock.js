@@ -1,4 +1,7 @@
+import { DateTime } from './luxon.js';
+
 export default function displayClock() {
-  document.getElementById('dateandtime').innerHTML = Date();
+  const dt = DateTime.now();
+  document.getElementById('dateandtime').innerHTML = dt.toLocaleString(DateTime.DATETIME_FULL);
   setTimeout(displayClock, 1000);
 }
