@@ -5,7 +5,7 @@ const addNewDisplay = document.getElementById('addnewsection');
 const contactBtn = document.getElementById('contact');
 const contactDisplay = document.getElementById('contactsection');
 
-export default function hidepages(event) {
+const hidepages = (event) => {
   switch (event.target.id) {
     case 'list':
       if (!addNewDisplay.classList.contains('hidden')) addNewDisplay.classList.add('hidden');
@@ -36,4 +36,6 @@ export default function hidepages(event) {
     default:
       break;
   }
-}
+};
+
+export default hidepages;

@@ -2,7 +2,7 @@ import Bookshelf from './modules/bookShelf.js';
 import hidepages from './modules/hidenMenus.js';
 import displayClock from './modules/clock.js';
 
-setTimeout(displayClock, 1000);
+setInterval(displayClock, 1000);
 const mybookshelf = new Bookshelf();
 const listBtn = document.getElementById('list');
 const addNewBtn = document.getElementById('addNew');
