@@ -1,10 +1,12 @@
-import { Bookshelf } from './modules/bookShelf';
-import { hidepages } from './modules/hidenMenus';
-import { displayClock } from './modules/clock';
+import Bookshelf from './modules/bookShelf.js';
+import hidepages from './modules/hidenMenus.js';
+import displayClock from './modules/clock.js';
 
 setTimeout(displayClock, 1000);
 const mybookshelf = new Bookshelf();
-
+const listBtn = document.getElementById('list');
+const addNewBtn = document.getElementById('addNew');
+const contactBtn = document.getElementById('contact');
 const addBtn = document.getElementById('add');
 addBtn.addEventListener('click', mybookshelf.addNewBook.bind(mybookshelf));
 
