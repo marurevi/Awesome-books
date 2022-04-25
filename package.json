@@ -1,0 +1,30 @@
+{
+  "name": "awesome-books",
+  "version": "1.0.0",
+  "description": "> \"Awesome books\" is a simple website that displays a list of books and allows you to add and remove books from that list. For building this application, we used local storage to save the data of the books and we give it some interactivity using JavaScript. We also used a medium-fidelity wireframe to build the UI.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marurevi/Awesome-books.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marurevi/Awesome-books/issues"
+  },
+  "homepage": "https://github.com/marurevi/Awesome-books#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.26.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0"
+  }
+}
